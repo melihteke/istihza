@@ -7,10 +7,12 @@ telephone_dic = {"Melih TEKE":"0533 345 34 35",
 
 asked_record = input("Please enter the name for your query: ")
 
-print("\n %s's phone number is %s" %(asked_record, telephone_dic[asked_record]))
-
-with open("phone_query.txt", "a") as f:
-	f.write("\n %s's phone number is %s" %(asked_record, telephone_dic[asked_record]))
-	f.close()
+if asked_record in telephone_dic:
+	print("\n%s's phone number is %s" %(asked_record, telephone_dic[asked_record]))
+	with open("phone_query.txt", "a") as f:
+		f.write("\n %s's phone number is %s" %(asked_record, telephone_dic[asked_record]))
+		f.close()
+else:
+	print("The person you have searched was not found in database !!!! ")
 
 
