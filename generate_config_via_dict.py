@@ -1,7 +1,7 @@
 
 #!/bin/python
 
-config_data =  {"192.168.1.1" : {"hostname":"Router1",
+config_data =			{"192.168.1.1" : {"hostname":"Router1",
 								"secret_pass" : "cisco",
 								"snmp_comm":"snmp_cisco"},
 				"192.168.2.1" : {"hostname":"Router2",
@@ -24,6 +24,12 @@ print("conf ter\n")
 print("hostname %s" %(config_data[device]["hostname"]))
 print("enable secret %s" %(config_data[device]["secret_pass"]))
 print("snmp community %s rw" %(config_data[device]["snmp_comm"]))
+
+with open("Generate_config.txt", "a") as f:
+	f.write("hostname "+config_data[device]["hostname"]+"\n")
+	f.write("enable secret"+config_data[device]["secret_pass"]+"\n")
+	f.write("snmp community"+config_data[device]["snmp_comm"]+"rw\n")
+	f.close()
 
 
 
