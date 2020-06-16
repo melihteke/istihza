@@ -3,6 +3,7 @@
 telephone_dic = {"Melih TEKE":"0533 345 34 35",
 		 "Osman TEKE":"0523 123 12 34",
 		 "Ali BEKIR":"0512 124 45 65",
+		 "Cansin TEKE":"0544 123 67 98",
 		 "Mehmet YEK":"0573 145 42 43"}
 
 asked_record = input("Please enter the name for your query: ")
