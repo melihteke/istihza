@@ -20,12 +20,13 @@ config_data =			{"192.168.1.1" : {"hostname":"Router1",
 device = input("Please select your device: ")
 
 
-print("conf ter\n")
+print("conf ter")
 print("hostname %s" %(config_data[device]["hostname"]))
 print("enable secret %s" %(config_data[device]["secret_pass"]))
 print("snmp community %s rw" %(config_data[device]["snmp_comm"]))
 
 with open("Generate_config.txt", "a") as f:
+	print("Generate_config.txt file is created")
 	f.write("hostname "+config_data[device]["hostname"]+"\n")
 	f.write("enable secret"+config_data[device]["secret_pass"]+"\n")
 	f.write("snmp community"+config_data[device]["snmp_comm"]+"rw\n")
