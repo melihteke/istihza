@@ -1,7 +1,7 @@
 import getpass
 import telnetlib
 
-HOST = "192.168.178.54"
+HOST = "192.168.178.64"
 user = input("Enter your telnet username: ")
 password = getpass.getpass()
 
@@ -15,11 +15,11 @@ if password:
 	tn.write(b"enable\n")
 	tn.write(b"cisco\n")
 	tn.write(b"conf t\n")
-	tn.write(b"int loop 20\n")
-	tn.write(b"ip address 20.1.1.1 255.255.255.255\n")
-	tn.write(b"int loop 21\n")
-	tn.write(b"ip address 21.2.2.2 255.255.255.255\n")
-	tn.write(b"router ospf 4\n")
+	tn.write(b"int loop 60\n")
+	tn.write(b"ip address 60.1.1.1 255.255.255.255\n")
+	tn.write(b"int loop 61\n")
+	tn.write(b"ip address 61.2.2.2 255.255.255.255\n")
+	tn.write(b"router ospf 60\n")
 	tn.write(b"network 0.0.0.0 255.255.255.255 area 0\n")
 	tn.write(b"end\n")
 	tn.write(b"exit\n")
@@ -29,6 +29,8 @@ if password:
 		print("telnet_config.txt file is created")
 		f.write("enable\n")
 		f.write("conf t\n")
-		f.write("int loop 20\n")
-		f.write("ip address 20.1.1.1 255.255.255.255\n")
+		f.write("int loop 60\n")
+		f.write("ip address 60.1.1.1 255.255.255.255\n")
+		f.write("int loop 61\n")
+		f.write("ip address 61.2.2.2 255.255.255.255\n")
 		f.close()
