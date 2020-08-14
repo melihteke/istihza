@@ -10,10 +10,11 @@ iosv_l2 = {
 }
 
 net_connect = ConnectHandler(**iosv_l2)
-output = net_connect.send_command('show ip int brief')
+print(net_connect.find_prompt())                  #shows actual prompt
+output = net_connect.send_command('show ip int brief')      #sends only single cli command
 print (output)
 
-config_commands = ['int loop 0', 'ip address 1.1.1.1 255.255.255.0']
+config_commands = ['int loop 0', 'ip address 1.1.1.1 255.255.255.0'] #sends sets of commands
 output = net_connect.send_config_set(config_commands)
 print (output)
 
